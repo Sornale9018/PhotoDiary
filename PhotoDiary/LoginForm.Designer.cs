@@ -31,8 +31,8 @@ namespace PhotoDiary
         {
             this.label1 = new System.Windows.Forms.Label();
             this.label2 = new System.Windows.Forms.Label();
-            this.UsernametextBox = new System.Windows.Forms.TextBox();
-            this.PasswordtextBox = new System.Windows.Forms.TextBox();
+            this.UsernamelogintextBox = new System.Windows.Forms.TextBox();
+            this.PasswordlogintextBox = new System.Windows.Forms.TextBox();
             this.Registerbutton = new System.Windows.Forms.Button();
             this.Loginbutton = new System.Windows.Forms.Button();
             this.label3 = new System.Windows.Forms.Label();
@@ -56,19 +56,19 @@ namespace PhotoDiary
             this.label2.TabIndex = 1;
             this.label2.Text = "Password";
             // 
-            // UsernametextBox
+            // UsernamelogintextBox
             // 
-            this.UsernametextBox.Location = new System.Drawing.Point(227, 97);
-            this.UsernametextBox.Name = "UsernametextBox";
-            this.UsernametextBox.Size = new System.Drawing.Size(100, 20);
-            this.UsernametextBox.TabIndex = 2;
+            this.UsernamelogintextBox.Location = new System.Drawing.Point(227, 97);
+            this.UsernamelogintextBox.Name = "UsernamelogintextBox";
+            this.UsernamelogintextBox.Size = new System.Drawing.Size(100, 20);
+            this.UsernamelogintextBox.TabIndex = 2;
             // 
-            // PasswordtextBox
+            // PasswordlogintextBox
             // 
-            this.PasswordtextBox.Location = new System.Drawing.Point(227, 149);
-            this.PasswordtextBox.Name = "PasswordtextBox";
-            this.PasswordtextBox.Size = new System.Drawing.Size(100, 20);
-            this.PasswordtextBox.TabIndex = 3;
+            this.PasswordlogintextBox.Location = new System.Drawing.Point(227, 149);
+            this.PasswordlogintextBox.Name = "PasswordlogintextBox";
+            this.PasswordlogintextBox.Size = new System.Drawing.Size(100, 20);
+            this.PasswordlogintextBox.TabIndex = 3;
             // 
             // Registerbutton
             // 
@@ -107,8 +107,8 @@ namespace PhotoDiary
             this.Controls.Add(this.label3);
             this.Controls.Add(this.Loginbutton);
             this.Controls.Add(this.Registerbutton);
-            this.Controls.Add(this.PasswordtextBox);
-            this.Controls.Add(this.UsernametextBox);
+            this.Controls.Add(this.PasswordlogintextBox);
+            this.Controls.Add(this.UsernamelogintextBox);
             this.Controls.Add(this.label2);
             this.Controls.Add(this.label1);
             this.Name = "LoginFrom";
@@ -124,8 +124,8 @@ namespace PhotoDiary
 
         private System.Windows.Forms.Label label1;
         private System.Windows.Forms.Label label2;
-        private System.Windows.Forms.TextBox UsernametextBox;
-        private System.Windows.Forms.TextBox PasswordtextBox;
+        private System.Windows.Forms.TextBox UsernamelogintextBox;
+        private System.Windows.Forms.TextBox PasswordlogintextBox;
         private System.Windows.Forms.Button Registerbutton;
         private System.Windows.Forms.Button Loginbutton;
         private System.Windows.Forms.Label label3;
