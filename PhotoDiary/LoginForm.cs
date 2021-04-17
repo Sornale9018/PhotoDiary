@@ -22,5 +22,13 @@ namespace PhotoDiary
             Application.Exit();
 
         }
+
+        private void Registerbutton_Click(object sender, EventArgs e)
+        {
+            RegisterForm registerform = new RegisterForm();
+            this.Hide();
+            registerform.Show();
+
+        }
     }
 }

@@ -7,6 +7,7 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
+using System.Text.RegularExpressions;
 
 namespace PhotoDiary
 {
@@ -28,47 +29,102 @@ namespace PhotoDiary
             { MessageBox.Show("Name can not be empty"); }
 
             else if (UsernameregistertextBox.Text == "")
-            { MessageBox.Show("usename can not be empty"); }
+            { MessageBox.Show("User Name can not be empty"); }
 
             else if (PasswordregistertextBox.Text == "")
-            { MessageBox.Show("password can not be empty"); }
+            { MessageBox.Show("Password can not be empty"); }
 
             else if (ConfirmpasswordregistertextBox.Text == "")
-            { MessageBox.Show("confrim password can not be empty"); }
+            { MessageBox.Show("Confrim Password can not be empty"); }
 
             else if (EmailregistertextBox.Text == "")
-            { MessageBox.Show("email can not be empty"); }
+            { MessageBox.Show("Email can not be empty"); }
 
             else if (DateofbirthregisterdateTimePicker.Text == "")
-            { MessageBox.Show("dateofbirth can not be empty"); }
+            { MessageBox.Show("Date of Birth can not be empty"); }
 
             else if (MaleregisterradioButton.Text == "" && FemaleregisterradioButton.Text == "")
-            { MessageBox.Show("gender can not be empty"); }
+            { MessageBox.Show("Gender can not be empty"); }
 
             else if (CountryregistercomboBox.Text == "")
-            { MessageBox.Show("blood can not be empty"); }
+            { MessageBox.Show("Blood Group can not be empty"); }
 
 
 
 
             else
             {
-                //Print print = new Print(this);
-                //print.Show();
-                //this.Hide();
+               
             }
         }
 
 
         private void EmailregistertextBox_Validating(object sender, CancelEventArgs e)
         {
-            System.Text.RegularExpressions.Regex rEmail = new System.Text.RegularExpressions.Regex(@"[a-zA-Z][\w\.-]{2,28}[a-zA-Z0-9]@[a-zA-Z0-9][\w\.-]*[a-zA-Z0-9]\.[a-zA-Z][a-zA-Z\.]*[a-zA-Z]$");
-            if(!rEmail.IsMatch(EmailregistertextBox.Text))
+            Regex rEmail = new Regex(@"[a-zA-Z][\w\.-]{2,28}[a-zA-Z0-9]@[a-zA-Z0-9][\w\.-]*[a-zA-Z0-9]\.[a-zA-Z][a-zA-Z\.]*[a-zA-Z]");
+            if (!rEmail.IsMatch(EmailregistertextBox.Text))
             {
                 MessageBox.Show("invalid email address", "error", MessageBoxButtons.OK, MessageBoxIcon.Error);
                 EmailregistertextBox.SelectAll();
-                e.Cancel = true;
+                //e.Cancel = true;
             }
+        }
+
+        private void UsernameregistertextBox_Validating(object sender, CancelEventArgs e)
+        {
+            Regex rUsername = new Regex(@"[a-z]{4,15}");
+            if (!rUsername.IsMatch(UsernameregistertextBox.Text))
+            {
+                MessageBox.Show("invalid User Name", "error", MessageBoxButtons.OK, MessageBoxIcon.Error);
+                UsernameregistertextBox.SelectAll();
+                //e.Cancel = true;
+
+
+            }
+        }
+
+        private void PasswordregistertextBox_Validating(object sender, CancelEventArgs e)
+        {
+            Regex rPassword = new Regex(@"[a-zA-Z]{4,15}$");
+            if (!rPassword.IsMatch(PasswordregistertextBox.Text))
+            {
+                MessageBox.Show("invalid User Name", "error", MessageBoxButtons.OK, MessageBoxIcon.Error);
+                PasswordregistertextBox.SelectAll();
+                //e.Cancel = true;
+
+
+            }
+
+        }
+
+        private void AgreeregistercheckBox_CheckedChanged(object sender, EventArgs e)
+        {
+            if (AgreeregistercheckBox.Checked)
+            {
+                Registerformbutton.Enabled = true;
+            }
+            else Registerformbutton.Enabled = false;
+        }
+
+        private void button1_Click(object sender, EventArgs e)
+        {
+            LoginFrom loginform = new LoginFrom();
+            this.Hide();
+
+            DialogResult d;
+
+            d = MessageBox.Show("Do you want to Login?", "", MessageBoxButtons.YesNoCancel, MessageBoxIcon.Question);
+
+            if (d == DialogResult.Yes)
+            {
+                loginform.Show();
+            }
+            else if (d == DialogResult.No)
+            {
+                this.Show();
+            }
+            else
+                Close();
         }
     }
 }

@@ -50,6 +50,8 @@ namespace PhotoDiary
             this.AgreeregistercheckBox = new System.Windows.Forms.CheckBox();
             this.label8 = new System.Windows.Forms.Label();
             this.EmailregistertextBox = new System.Windows.Forms.TextBox();
+            this.label10 = new System.Windows.Forms.Label();
+            this.Loginregisterbutton = new System.Windows.Forms.Button();
             this.SuspendLayout();
             // 
             // label1
@@ -126,12 +128,13 @@ namespace PhotoDiary
             // 
             // Registerformbutton
             // 
-            this.Registerformbutton.Location = new System.Drawing.Point(291, 363);
+            this.Registerformbutton.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(255)))), ((int)(((byte)(192)))), ((int)(((byte)(192)))));
+            this.Registerformbutton.Location = new System.Drawing.Point(303, 347);
             this.Registerformbutton.Name = "Registerformbutton";
             this.Registerformbutton.Size = new System.Drawing.Size(75, 27);
             this.Registerformbutton.TabIndex = 9;
             this.Registerformbutton.Text = "Register";
-            this.Registerformbutton.UseVisualStyleBackColor = true;
+            this.Registerformbutton.UseVisualStyleBackColor = false;
             this.Registerformbutton.Click += new System.EventHandler(this.Registerformbutton_Click);
             // 
             // NameregistertextBox
@@ -147,6 +150,7 @@ namespace PhotoDiary
             this.UsernameregistertextBox.Name = "UsernameregistertextBox";
             this.UsernameregistertextBox.Size = new System.Drawing.Size(100, 20);
             this.UsernameregistertextBox.TabIndex = 11;
+            this.UsernameregistertextBox.Validating += new System.ComponentModel.CancelEventHandler(this.UsernameregistertextBox_Validating);
             // 
             // PasswordregistertextBox
             // 
@@ -154,6 +158,7 @@ namespace PhotoDiary
             this.PasswordregistertextBox.Name = "PasswordregistertextBox";
             this.PasswordregistertextBox.Size = new System.Drawing.Size(100, 20);
             this.PasswordregistertextBox.TabIndex = 12;
+            this.PasswordregistertextBox.Validating += new System.ComponentModel.CancelEventHandler(this.PasswordregistertextBox_Validating);
             // 
             // ConfirmpasswordregistertextBox
             // 
@@ -184,10 +189,10 @@ namespace PhotoDiary
             this.MaleregisterradioButton.AutoSize = true;
             this.MaleregisterradioButton.Location = new System.Drawing.Point(228, 264);
             this.MaleregisterradioButton.Name = "MaleregisterradioButton";
-            this.MaleregisterradioButton.Size = new System.Drawing.Size(85, 17);
+            this.MaleregisterradioButton.Size = new System.Drawing.Size(48, 17);
             this.MaleregisterradioButton.TabIndex = 16;
             this.MaleregisterradioButton.TabStop = true;
-            this.MaleregisterradioButton.Text = "radioButton1";
+            this.MaleregisterradioButton.Text = "Male";
             this.MaleregisterradioButton.UseVisualStyleBackColor = true;
             // 
             // FemaleregisterradioButton
@@ -195,10 +200,10 @@ namespace PhotoDiary
             this.FemaleregisterradioButton.AutoSize = true;
             this.FemaleregisterradioButton.Location = new System.Drawing.Point(319, 264);
             this.FemaleregisterradioButton.Name = "FemaleregisterradioButton";
-            this.FemaleregisterradioButton.Size = new System.Drawing.Size(85, 17);
+            this.FemaleregisterradioButton.Size = new System.Drawing.Size(59, 17);
             this.FemaleregisterradioButton.TabIndex = 17;
             this.FemaleregisterradioButton.TabStop = true;
-            this.FemaleregisterradioButton.Text = "radioButton2";
+            this.FemaleregisterradioButton.Text = "Female";
             this.FemaleregisterradioButton.UseVisualStyleBackColor = true;
             // 
             // CountryregistercomboBox
@@ -219,6 +224,7 @@ namespace PhotoDiary
             this.AgreeregistercheckBox.TabIndex = 20;
             this.AgreeregistercheckBox.Text = "I Agree all the terms & condition";
             this.AgreeregistercheckBox.UseVisualStyleBackColor = true;
+            this.AgreeregistercheckBox.CheckedChanged += new System.EventHandler(this.AgreeregistercheckBox_CheckedChanged);
             // 
             // label8
             // 
@@ -237,12 +243,35 @@ namespace PhotoDiary
             this.EmailregistertextBox.TabIndex = 22;
             this.EmailregistertextBox.Validating += new System.ComponentModel.CancelEventHandler(this.EmailregistertextBox_Validating);
             // 
+            // label10
+            // 
+            this.label10.AutoSize = true;
+            this.label10.Font = new System.Drawing.Font("Microsoft YaHei UI", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label10.Location = new System.Drawing.Point(38, 395);
+            this.label10.Name = "label10";
+            this.label10.Size = new System.Drawing.Size(186, 19);
+            this.label10.TabIndex = 23;
+            this.label10.Text = "Already Have An Account?";
+            // 
+            // Loginregisterbutton
+            // 
+            this.Loginregisterbutton.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(255)))), ((int)(((byte)(192)))), ((int)(((byte)(192)))));
+            this.Loginregisterbutton.Location = new System.Drawing.Point(303, 394);
+            this.Loginregisterbutton.Name = "Loginregisterbutton";
+            this.Loginregisterbutton.Size = new System.Drawing.Size(75, 23);
+            this.Loginregisterbutton.TabIndex = 24;
+            this.Loginregisterbutton.Text = "Login";
+            this.Loginregisterbutton.UseVisualStyleBackColor = false;
+            this.Loginregisterbutton.Click += new System.EventHandler(this.button1_Click);
+            // 
             // RegisterForm
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(255)))), ((int)(((byte)(128)))), ((int)(((byte)(128)))));
             this.ClientSize = new System.Drawing.Size(549, 450);
+            this.Controls.Add(this.Loginregisterbutton);
+            this.Controls.Add(this.label10);
             this.Controls.Add(this.EmailregistertextBox);
             this.Controls.Add(this.label8);
             this.Controls.Add(this.AgreeregistercheckBox);
@@ -295,5 +324,7 @@ namespace PhotoDiary
         private System.Windows.Forms.CheckBox AgreeregistercheckBox;
         private System.Windows.Forms.Label label8;
         private System.Windows.Forms.TextBox EmailregistertextBox;
+        private System.Windows.Forms.Label label10;
+        private System.Windows.Forms.Button Loginregisterbutton;
     }
 }

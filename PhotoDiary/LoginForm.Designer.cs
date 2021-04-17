@@ -78,6 +78,7 @@ namespace PhotoDiary
             this.Registerbutton.TabIndex = 4;
             this.Registerbutton.Text = "Register";
             this.Registerbutton.UseVisualStyleBackColor = true;
+            this.Registerbutton.Click += new System.EventHandler(this.Registerbutton_Click);
             // 
             // Loginbutton
             // 
