@@ -67,6 +67,7 @@ namespace PhotoDiary
             // 
             this.PasswordlogintextBox.Location = new System.Drawing.Point(227, 149);
             this.PasswordlogintextBox.Name = "PasswordlogintextBox";
+            this.PasswordlogintextBox.PasswordChar = '*';
             this.PasswordlogintextBox.Size = new System.Drawing.Size(100, 20);
             this.PasswordlogintextBox.TabIndex = 3;
             // 
@@ -88,6 +89,7 @@ namespace PhotoDiary
             this.Loginbutton.TabIndex = 5;
             this.Loginbutton.Text = "Login";
             this.Loginbutton.UseVisualStyleBackColor = true;
+            this.Loginbutton.Click += new System.EventHandler(this.Loginbutton_Click);
             // 
             // label3
             // 
@@ -116,6 +118,7 @@ namespace PhotoDiary
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
             this.Text = "LoginFrom";
             this.FormClosing += new System.Windows.Forms.FormClosingEventHandler(this.Form1_FormClosing);
+            this.FormClosed += new System.Windows.Forms.FormClosedEventHandler(this.LoginFrom_FormClosed);
             this.ResumeLayout(false);
             this.PerformLayout();
 

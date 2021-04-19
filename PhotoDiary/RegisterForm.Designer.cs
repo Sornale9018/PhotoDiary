@@ -156,14 +156,15 @@ namespace PhotoDiary
             // 
             this.PasswordregistertextBox.Location = new System.Drawing.Point(228, 90);
             this.PasswordregistertextBox.Name = "PasswordregistertextBox";
+            this.PasswordregistertextBox.PasswordChar = '*';
             this.PasswordregistertextBox.Size = new System.Drawing.Size(100, 20);
             this.PasswordregistertextBox.TabIndex = 12;
-            this.PasswordregistertextBox.Validating += new System.ComponentModel.CancelEventHandler(this.PasswordregistertextBox_Validating);
             // 
             // ConfirmpasswordregistertextBox
             // 
             this.ConfirmpasswordregistertextBox.Location = new System.Drawing.Point(228, 122);
             this.ConfirmpasswordregistertextBox.Name = "ConfirmpasswordregistertextBox";
+            this.ConfirmpasswordregistertextBox.PasswordChar = '*';
             this.ConfirmpasswordregistertextBox.Size = new System.Drawing.Size(100, 20);
             this.ConfirmpasswordregistertextBox.TabIndex = 13;
             // 
@@ -209,6 +210,11 @@ namespace PhotoDiary
             // CountryregistercomboBox
             // 
             this.CountryregistercomboBox.FormattingEnabled = true;
+            this.CountryregistercomboBox.Items.AddRange(new object[] {
+            "Bangladesh",
+            "India",
+            "Japan",
+            "Pakistan"});
             this.CountryregistercomboBox.Location = new System.Drawing.Point(228, 296);
             this.CountryregistercomboBox.Name = "CountryregistercomboBox";
             this.CountryregistercomboBox.Size = new System.Drawing.Size(121, 21);
@@ -296,6 +302,7 @@ namespace PhotoDiary
             this.Name = "RegisterForm";
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
             this.Text = "RegisterForm";
+            this.FormClosing += new System.Windows.Forms.FormClosingEventHandler(this.RegisterForm_FormClosing);
             this.ResumeLayout(false);
             this.PerformLayout();
 
@@ -318,13 +325,59 @@ namespace PhotoDiary
         private System.Windows.Forms.TextBox ConfirmpasswordregistertextBox;
         private System.Windows.Forms.TextBox MobilenumberregistertextBox;
         private System.Windows.Forms.DateTimePicker DateofbirthregisterdateTimePicker;
-        private System.Windows.Forms.RadioButton MaleregisterradioButton;
-        private System.Windows.Forms.RadioButton FemaleregisterradioButton;
+        public System.Windows.Forms.RadioButton MaleregisterradioButton;
+        public System.Windows.Forms.RadioButton FemaleregisterradioButton;
         private System.Windows.Forms.ComboBox CountryregistercomboBox;
         private System.Windows.Forms.CheckBox AgreeregistercheckBox;
         private System.Windows.Forms.Label label8;
         private System.Windows.Forms.TextBox EmailregistertextBox;
         private System.Windows.Forms.Label label10;
         private System.Windows.Forms.Button Loginregisterbutton;
+
+
+
+
+        public string NametextBox
+        {
+            set { this.NameregistertextBox.Text = value; }
+            get { return this.NameregistertextBox.Text; }
+        }
+        public string Usernametextbox
+        {
+            set { this.UsernameregistertextBox.Text = value; }
+            get { return this.UsernameregistertextBox.Text; }
+        }
+
+        public string Emailtextbox
+        {
+            set { this.EmailregistertextBox.Text = value; }
+            get { return EmailregistertextBox.Text; }
+        }
+
+        public string Passwordtextbox
+        {
+            set { this.PasswordregistertextBox.Text = value; }
+            get { return this.PasswordregistertextBox.Text; }
+        }
+
+        public string Countrycombobox
+        {
+            set { this.CountryregistercomboBox.Text = value; }
+            get { return this.CountryregistercomboBox.Text; }
+        }
+
+        public string Mobilenumbertextbox
+        {
+            set { this.MobilenumberregistertextBox.Text = value; }
+            get { return this.MobilenumberregistertextBox.Text; }
+        }
+
+        public string Dateofbirthdatetimepicker
+        {
+            set { this.DateofbirthregisterdateTimePicker.Text = value; }
+            get { return this.DateofbirthregisterdateTimePicker.Text; }
+        }
+
+
     }
 }

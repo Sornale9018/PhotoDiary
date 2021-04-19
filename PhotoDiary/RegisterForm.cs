@@ -8,6 +8,8 @@ using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
 using System.Text.RegularExpressions;
+using System.Data.SqlClient;
+using System.Configuration;
 
 namespace PhotoDiary
 {
@@ -54,7 +56,40 @@ namespace PhotoDiary
 
             else
             {
-               
+                //Database
+                SqlConnection connection = new SqlConnection(ConfigurationManager.ConnectionStrings["MyDiary"].ConnectionString);
+
+                connection.Open();
+
+                string gender = "";
+                if (MaleregisterradioButton.Checked)
+                { 
+                    gender = "Male";
+                }
+                else 
+                {
+                    gender = "Female"; 
+                }
+                string sql = "INSERT INTO USERS(userName,password,name,email,mobileNumber,dateofBirth,gender,country)VALUES('" + UsernameregistertextBox.Text + "','" + PasswordregistertextBox.Text + "','"+NameregistertextBox.Text+"','" + EmailregistertextBox.Text + "','"+MobilenumberregistertextBox.Text+"','"+DateofbirthregisterdateTimePicker.Text+"','" + gender + "','" + CountryregistercomboBox.Text + "')";
+                SqlCommand command = new SqlCommand(sql, connection);
+                int result = command.ExecuteNonQuery();
+
+                if (result > 0)
+                {
+                    MessageBox.Show("User Added");
+                    connection.Close();
+                    LoginFrom login = new LoginFrom();
+                    this.Hide();
+                    login.Show();
+                    connection.Close();
+                }
+                else
+
+                {
+                    MessageBox.Show("User Not Added");
+                    connection.Close();
+                }
+
             }
         }
 
@@ -72,7 +107,7 @@ namespace PhotoDiary
 
         private void UsernameregistertextBox_Validating(object sender, CancelEventArgs e)
         {
-            Regex rUsername = new Regex(@"[a-z]{4,15}");
+            Regex rUsername = new Regex("[a-z]{4,15}");
             if (!rUsername.IsMatch(UsernameregistertextBox.Text))
             {
                 MessageBox.Show("invalid User Name", "error", MessageBoxButtons.OK, MessageBoxIcon.Error);
@@ -83,7 +118,7 @@ namespace PhotoDiary
             }
         }
 
-        private void PasswordregistertextBox_Validating(object sender, CancelEventArgs e)
+        /*private void PasswordregistertextBox_Validating(object sender, CancelEventArgs e)
         {
             Regex rPassword = new Regex(@"[a-zA-Z]{4,15}$");
             if (!rPassword.IsMatch(PasswordregistertextBox.Text))
@@ -95,7 +130,7 @@ namespace PhotoDiary
 
             }
 
-        }
+        }*/
 
         private void AgreeregistercheckBox_CheckedChanged(object sender, EventArgs e)
         {
@@ -125,6 +160,11 @@ namespace PhotoDiary
             }
             else
                 Close();
+        }
+
+        private void RegisterForm_FormClosing(object sender, FormClosingEventArgs e)
+        {
+            Application.Exit();
         }
     }
 }
