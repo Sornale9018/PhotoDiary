@@ -33,15 +33,16 @@ namespace PhotoDiary
             this.Storylabel = new System.Windows.Forms.Label();
             this.Datelabel = new System.Windows.Forms.Label();
             this.Importancelabel = new System.Windows.Forms.Label();
-            this.textBox1 = new System.Windows.Forms.TextBox();
-            this.textBox2 = new System.Windows.Forms.TextBox();
+            this.EventnametextBox = new System.Windows.Forms.TextBox();
+            this.StorytextBox = new System.Windows.Forms.TextBox();
             this.LessradioButton = new System.Windows.Forms.RadioButton();
             this.ModerateradioButton = new System.Windows.Forms.RadioButton();
             this.HighradioButton = new System.Windows.Forms.RadioButton();
             this.Uploadimagebutton = new System.Windows.Forms.Button();
             this.UploadimagetextBox = new System.Windows.Forms.TextBox();
-            this.pictureBox = new System.Windows.Forms.PictureBox();
             this.svaebutton = new System.Windows.Forms.Button();
+            this.pictureBox = new System.Windows.Forms.PictureBox();
+            this.dateTimePicker = new System.Windows.Forms.DateTimePicker();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox)).BeginInit();
             this.SuspendLayout();
             // 
@@ -81,20 +82,20 @@ namespace PhotoDiary
             this.Importancelabel.TabIndex = 3;
             this.Importancelabel.Text = "Importance";
             // 
-            // textBox1
+            // EventnametextBox
             // 
-            this.textBox1.Location = new System.Drawing.Point(183, 28);
-            this.textBox1.Name = "textBox1";
-            this.textBox1.Size = new System.Drawing.Size(229, 20);
-            this.textBox1.TabIndex = 5;
+            this.EventnametextBox.Location = new System.Drawing.Point(183, 28);
+            this.EventnametextBox.Name = "EventnametextBox";
+            this.EventnametextBox.Size = new System.Drawing.Size(229, 20);
+            this.EventnametextBox.TabIndex = 5;
             // 
-            // textBox2
+            // StorytextBox
             // 
-            this.textBox2.Location = new System.Drawing.Point(215, 65);
-            this.textBox2.Multiline = true;
-            this.textBox2.Name = "textBox2";
-            this.textBox2.Size = new System.Drawing.Size(408, 94);
-            this.textBox2.TabIndex = 6;
+            this.StorytextBox.Location = new System.Drawing.Point(215, 65);
+            this.StorytextBox.Multiline = true;
+            this.StorytextBox.Name = "StorytextBox";
+            this.StorytextBox.Size = new System.Drawing.Size(408, 94);
+            this.StorytextBox.TabIndex = 6;
             // 
             // LessradioButton
             // 
@@ -146,6 +147,16 @@ namespace PhotoDiary
             this.UploadimagetextBox.Size = new System.Drawing.Size(382, 20);
             this.UploadimagetextBox.TabIndex = 11;
             // 
+            // svaebutton
+            // 
+            this.svaebutton.Location = new System.Drawing.Point(783, 383);
+            this.svaebutton.Name = "svaebutton";
+            this.svaebutton.Size = new System.Drawing.Size(105, 43);
+            this.svaebutton.TabIndex = 13;
+            this.svaebutton.Text = "Save";
+            this.svaebutton.UseVisualStyleBackColor = true;
+            this.svaebutton.Click += new System.EventHandler(this.svaebutton_Click);
+            // 
             // pictureBox
             // 
             this.pictureBox.Location = new System.Drawing.Point(685, 123);
@@ -155,14 +166,16 @@ namespace PhotoDiary
             this.pictureBox.TabIndex = 12;
             this.pictureBox.TabStop = false;
             // 
-            // svaebutton
+            // dateTimePicker
             // 
-            this.svaebutton.Location = new System.Drawing.Point(783, 383);
-            this.svaebutton.Name = "svaebutton";
-            this.svaebutton.Size = new System.Drawing.Size(105, 43);
-            this.svaebutton.TabIndex = 13;
-            this.svaebutton.Text = "Save";
-            this.svaebutton.UseVisualStyleBackColor = true;
+            this.dateTimePicker.Enabled = false;
+            this.dateTimePicker.Location = new System.Drawing.Point(215, 173);
+            this.dateTimePicker.MaxDate = new System.DateTime(2021, 4, 19, 0, 0, 0, 0);
+            this.dateTimePicker.MinDate = new System.DateTime(2021, 4, 19, 0, 0, 0, 0);
+            this.dateTimePicker.Name = "dateTimePicker";
+            this.dateTimePicker.Size = new System.Drawing.Size(197, 20);
+            this.dateTimePicker.TabIndex = 14;
+            this.dateTimePicker.Value = new System.DateTime(2021, 4, 19, 0, 0, 0, 0);
             // 
             // CreateEvent
             // 
@@ -170,6 +183,7 @@ namespace PhotoDiary
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(255)))), ((int)(((byte)(128)))), ((int)(((byte)(128)))));
             this.ClientSize = new System.Drawing.Size(991, 450);
+            this.Controls.Add(this.dateTimePicker);
             this.Controls.Add(this.svaebutton);
             this.Controls.Add(this.pictureBox);
             this.Controls.Add(this.UploadimagetextBox);
@@ -177,8 +191,8 @@ namespace PhotoDiary
             this.Controls.Add(this.HighradioButton);
             this.Controls.Add(this.ModerateradioButton);
             this.Controls.Add(this.LessradioButton);
-            this.Controls.Add(this.textBox2);
-            this.Controls.Add(this.textBox1);
+            this.Controls.Add(this.StorytextBox);
+            this.Controls.Add(this.EventnametextBox);
             this.Controls.Add(this.Importancelabel);
             this.Controls.Add(this.Datelabel);
             this.Controls.Add(this.Storylabel);
@@ -186,6 +200,7 @@ namespace PhotoDiary
             this.Name = "CreateEvent";
             this.Text = "CreateEvent";
             this.FormClosing += new System.Windows.Forms.FormClosingEventHandler(this.CreateEvent_FormClosing);
+            this.Load += new System.EventHandler(this.CreateEvent_Load);
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox)).EndInit();
             this.ResumeLayout(false);
             this.PerformLayout();
@@ -198,8 +213,8 @@ namespace PhotoDiary
         private System.Windows.Forms.Label Storylabel;
         private System.Windows.Forms.Label Datelabel;
         private System.Windows.Forms.Label Importancelabel;
-        private System.Windows.Forms.TextBox textBox1;
-        private System.Windows.Forms.TextBox textBox2;
+        private System.Windows.Forms.TextBox EventnametextBox;
+        private System.Windows.Forms.TextBox StorytextBox;
         private System.Windows.Forms.RadioButton LessradioButton;
         private System.Windows.Forms.RadioButton ModerateradioButton;
         private System.Windows.Forms.RadioButton HighradioButton;
@@ -207,5 +222,6 @@ namespace PhotoDiary
         private System.Windows.Forms.TextBox UploadimagetextBox;
         private System.Windows.Forms.PictureBox pictureBox;
         private System.Windows.Forms.Button svaebutton;
+        private System.Windows.Forms.DateTimePicker dateTimePicker;
     }
 }

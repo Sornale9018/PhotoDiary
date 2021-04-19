@@ -1,7 +1,9 @@
 ﻿using System;
 using System.Collections.Generic;
 using System.ComponentModel;
+using System.Configuration;
 using System.Data;
+using System.Data.SqlClient;
 using System.Drawing;
 using System.Linq;
 using System.Text;
@@ -30,6 +32,37 @@ namespace PhotoDiary
         private void Dashboard_Load(object sender, EventArgs e)
         {
             label2.Text = LoginFrom.Uname;
+            SqlConnection connection = new SqlConnection(ConfigurationManager.ConnectionStrings["MyDiary"].ConnectionString);
+            connection.Open();
+            string sql = "SELECT *FROM Diary WHERE userName= '" + LoginFrom.UserName + "'";
+            SqlCommand command = new SqlCommand(sql, connection);
+            SqlDataReader reader = command.ExecuteReader();
+            List<Users> users = new List<Users>();
+            while (reader.Read())
+            {
+                Users user = new Users();
+                user.Id = (int)reader["id"];
+                user.EventName = Convert.ToString(reader["eventName"]);
+                user.Story = Convert.ToString(reader["story"]);
+                user.CreateDate = Convert.ToString(reader["createDate"]);
+                user.Importance = reader["importance"].ToString();
+                user.Path = Convert.ToString(reader["filename"]);
+                users.Add(user);
+            }
+            EventlistdataGridView.DataSource = users;
+        }
+
+        private void button1_Click(object sender, EventArgs e)
+        {
+            CreateEvent createevent = new CreateEvent();
+            this.Hide();
+            createevent.Show();
+        }
+
+        private void button5_Click(object sender, EventArgs e)
+        {
+            LoginFrom loginFrom = new LoginFrom();
+            
         }
     }
 }
