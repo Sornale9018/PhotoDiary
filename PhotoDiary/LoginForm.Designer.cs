@@ -73,22 +73,27 @@ namespace PhotoDiary
             // 
             // Registerbutton
             // 
+            this.Registerbutton.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(255)))), ((int)(((byte)(192)))), ((int)(((byte)(192)))));
+            this.Registerbutton.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.Registerbutton.Location = new System.Drawing.Point(117, 372);
             this.Registerbutton.Name = "Registerbutton";
             this.Registerbutton.Size = new System.Drawing.Size(75, 23);
             this.Registerbutton.TabIndex = 4;
             this.Registerbutton.Text = "Register";
-            this.Registerbutton.UseVisualStyleBackColor = true;
+            this.Registerbutton.UseVisualStyleBackColor = false;
             this.Registerbutton.Click += new System.EventHandler(this.Registerbutton_Click);
             // 
             // Loginbutton
             // 
+            this.Loginbutton.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(255)))), ((int)(((byte)(192)))), ((int)(((byte)(192)))));
+            this.Loginbutton.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.Loginbutton.ForeColor = System.Drawing.SystemColors.ActiveCaptionText;
             this.Loginbutton.Location = new System.Drawing.Point(317, 210);
             this.Loginbutton.Name = "Loginbutton";
             this.Loginbutton.Size = new System.Drawing.Size(75, 23);
             this.Loginbutton.TabIndex = 5;
             this.Loginbutton.Text = "Login";
-            this.Loginbutton.UseVisualStyleBackColor = true;
+            this.Loginbutton.UseVisualStyleBackColor = false;
             this.Loginbutton.Click += new System.EventHandler(this.Loginbutton_Click);
             // 
             // label3
