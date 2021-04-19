@@ -62,7 +62,26 @@ namespace PhotoDiary
         private void button5_Click(object sender, EventArgs e)
         {
             LoginFrom loginFrom = new LoginFrom();
+            this.Hide();
             
+            LoginFrom loginform = new LoginFrom();
+            this.Hide();
+
+            DialogResult d;
+
+            d = MessageBox.Show("Do you want to Logout?", "", MessageBoxButtons.YesNoCancel, MessageBoxIcon.Question);
+
+            if (d == DialogResult.Yes)
+            {
+                loginform.Show();
+            }
+            else if (d == DialogResult.No)
+            {
+                this.Show();
+            }
+            else
+                Close();
+
         }
     }
 }
