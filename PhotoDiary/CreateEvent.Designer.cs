@@ -43,6 +43,7 @@ namespace PhotoDiary
             this.svaebutton = new System.Windows.Forms.Button();
             this.pictureBox = new System.Windows.Forms.PictureBox();
             this.dateTimePicker = new System.Windows.Forms.DateTimePicker();
+            this.Backcreatebutton = new System.Windows.Forms.Button();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox)).BeginInit();
             this.SuspendLayout();
             // 
@@ -149,7 +150,7 @@ namespace PhotoDiary
             // 
             // svaebutton
             // 
-            this.svaebutton.Location = new System.Drawing.Point(783, 383);
+            this.svaebutton.Location = new System.Drawing.Point(660, 363);
             this.svaebutton.Name = "svaebutton";
             this.svaebutton.Size = new System.Drawing.Size(105, 43);
             this.svaebutton.TabIndex = 13;
@@ -177,12 +178,23 @@ namespace PhotoDiary
             this.dateTimePicker.TabIndex = 14;
             this.dateTimePicker.Value = new System.DateTime(2021, 4, 19, 0, 0, 0, 0);
             // 
+            // Backcreatebutton
+            // 
+            this.Backcreatebutton.Location = new System.Drawing.Point(810, 363);
+            this.Backcreatebutton.Name = "Backcreatebutton";
+            this.Backcreatebutton.Size = new System.Drawing.Size(99, 43);
+            this.Backcreatebutton.TabIndex = 15;
+            this.Backcreatebutton.Text = "Back";
+            this.Backcreatebutton.UseVisualStyleBackColor = true;
+            this.Backcreatebutton.Click += new System.EventHandler(this.Backcreatebutton_Click);
+            // 
             // CreateEvent
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(255)))), ((int)(((byte)(128)))), ((int)(((byte)(128)))));
             this.ClientSize = new System.Drawing.Size(991, 450);
+            this.Controls.Add(this.Backcreatebutton);
             this.Controls.Add(this.dateTimePicker);
             this.Controls.Add(this.svaebutton);
             this.Controls.Add(this.pictureBox);
@@ -223,5 +235,6 @@ namespace PhotoDiary
         private System.Windows.Forms.PictureBox pictureBox;
         private System.Windows.Forms.Button svaebutton;
         private System.Windows.Forms.DateTimePicker dateTimePicker;
+        private System.Windows.Forms.Button Backcreatebutton;
     }
 }

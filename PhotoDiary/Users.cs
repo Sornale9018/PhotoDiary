@@ -16,6 +16,7 @@ namespace PhotoDiary
         public string Story { set; get; }
         public string CreateDate { set; get; }
         public string Path { set; get; }
+        public string ModifyDate { set; get; }
         
         public string Importance { set; get; }
        

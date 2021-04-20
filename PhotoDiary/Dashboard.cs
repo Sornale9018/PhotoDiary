@@ -45,6 +45,7 @@ namespace PhotoDiary
                 user.EventName = Convert.ToString(reader["eventName"]);
                 user.Story = Convert.ToString(reader["story"]);
                 user.CreateDate = Convert.ToString(reader["createDate"]);
+                user.ModifyDate = Convert.ToString(reader["modifyDate"]);
                 user.Importance = reader["importance"].ToString();
                 user.Path = Convert.ToString(reader["filename"]);
                 users.Add(user);
@@ -82,6 +83,20 @@ namespace PhotoDiary
             else
                 Close();
 
+        }
+
+        private void button2_Click(object sender, EventArgs e)
+        {
+            EditEvent editEvent = new EditEvent();
+            this.Hide();
+            editEvent.Show();
+        }
+
+        private void button3_Click(object sender, EventArgs e)
+        {
+            DeleteEvent deleteEvent = new DeleteEvent();
+            this.Hide();
+            deleteEvent.Show();
         }
     }
 }

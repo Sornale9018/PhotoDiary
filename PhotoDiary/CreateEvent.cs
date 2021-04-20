@@ -42,7 +42,7 @@ namespace PhotoDiary
         }
 
         public static string imagepath;
-        public string ImagePath
+        public static string ImagePath
         {
             set { imagepath = value; }
             get { return imagepath; }
@@ -149,6 +149,29 @@ namespace PhotoDiary
         private void CreateEvent_Load(object sender, EventArgs e)
         {
 
+        }
+
+        private void Backcreatebutton_Click(object sender, EventArgs e)
+        {
+            Dashboard dashboard = new Dashboard();
+            this.Hide();
+
+
+
+            DialogResult d;
+
+            d = MessageBox.Show("Do you want to Go Back?", "", MessageBoxButtons.YesNoCancel, MessageBoxIcon.Question);
+
+            if (d == DialogResult.Yes)
+            {
+                dashboard.Show();
+            }
+            else if (d == DialogResult.No)
+            {
+                this.Show();
+            }
+            else
+                Close();
         }
     }
 }
