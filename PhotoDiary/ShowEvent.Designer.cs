@@ -41,9 +41,9 @@ namespace PhotoDiary
             this.ModifytextBox = new System.Windows.Forms.TextBox();
             this.label1 = new System.Windows.Forms.Label();
             this.CreatetextBox = new System.Windows.Forms.TextBox();
-            this.label2 = new System.Windows.Forms.Label();
             this.button = new System.Windows.Forms.Button();
             this.textBox = new System.Windows.Forms.TextBox();
+            this.createlabel = new System.Windows.Forms.Label();
             ((System.ComponentModel.ISupportInitialize)(this.ShoweventdataGridView)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox)).BeginInit();
             this.SuspendLayout();
@@ -156,15 +156,6 @@ namespace PhotoDiary
             this.CreatetextBox.Size = new System.Drawing.Size(408, 20);
             this.CreatetextBox.TabIndex = 45;
             // 
-            // label2
-            // 
-            this.label2.AutoSize = true;
-            this.label2.Location = new System.Drawing.Point(47, 334);
-            this.label2.Name = "label2";
-            this.label2.Size = new System.Drawing.Size(72, 13);
-            this.label2.TabIndex = 44;
-            this.label2.Text = "Creation Date";
-            // 
             // button
             // 
             this.button.Location = new System.Drawing.Point(976, 391);
@@ -182,16 +173,25 @@ namespace PhotoDiary
             this.textBox.Size = new System.Drawing.Size(408, 20);
             this.textBox.TabIndex = 47;
             // 
+            // createlabel
+            // 
+            this.createlabel.AutoSize = true;
+            this.createlabel.Location = new System.Drawing.Point(50, 334);
+            this.createlabel.Name = "createlabel";
+            this.createlabel.Size = new System.Drawing.Size(72, 13);
+            this.createlabel.TabIndex = 48;
+            this.createlabel.Text = "Creation Date";
+            // 
             // ShowEvent
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(255)))), ((int)(((byte)(128)))), ((int)(((byte)(128)))));
             this.ClientSize = new System.Drawing.Size(1063, 487);
+            this.Controls.Add(this.createlabel);
             this.Controls.Add(this.textBox);
             this.Controls.Add(this.button);
             this.Controls.Add(this.CreatetextBox);
-            this.Controls.Add(this.label2);
             this.Controls.Add(this.label1);
             this.Controls.Add(this.ModifytextBox);
             this.Controls.Add(this.pictureBox);
@@ -228,8 +228,8 @@ namespace PhotoDiary
         private System.Windows.Forms.TextBox ModifytextBox;
         private System.Windows.Forms.Label label1;
         private System.Windows.Forms.TextBox CreatetextBox;
-        private System.Windows.Forms.Label label2;
         private System.Windows.Forms.Button button;
         private System.Windows.Forms.TextBox textBox;
+        private System.Windows.Forms.Label createlabel;
     }
 }

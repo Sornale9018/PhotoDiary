@@ -21,7 +21,7 @@ namespace PhotoDiary
 
         private void ShowEvent_Load(object sender, EventArgs e)
         {
-            label2.Text = LoginFrom.Uname;
+            
             SqlConnection connection = new SqlConnection(ConfigurationManager.ConnectionStrings["MyDiary"].ConnectionString);
             connection.Open();
             string sql = "SELECT *FROM Diary WHERE userName= '" + LoginFrom.UserName + "'";
