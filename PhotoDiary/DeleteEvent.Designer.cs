@@ -30,7 +30,6 @@ namespace PhotoDiary
         private void InitializeComponent()
         {
             this.Searchbutton = new System.Windows.Forms.Button();
-            this.ModifydateTimePicker = new System.Windows.Forms.DateTimePicker();
             this.Deletebutton = new System.Windows.Forms.Button();
             this.pictureeditBox = new System.Windows.Forms.PictureBox();
             this.UploadimageedittextBox = new System.Windows.Forms.TextBox();
@@ -45,6 +44,7 @@ namespace PhotoDiary
             this.Storylabel = new System.Windows.Forms.Label();
             this.Eventnamelabel = new System.Windows.Forms.Label();
             this.Backdeletebutton = new System.Windows.Forms.Button();
+            this.ModifydatedateTimePicker = new System.Windows.Forms.TextBox();
             ((System.ComponentModel.ISupportInitialize)(this.pictureeditBox)).BeginInit();
             this.SuspendLayout();
             // 
@@ -58,17 +58,6 @@ namespace PhotoDiary
             this.Searchbutton.Text = "Search";
             this.Searchbutton.UseVisualStyleBackColor = false;
             this.Searchbutton.Click += new System.EventHandler(this.Searchbutton_Click);
-            // 
-            // ModifydateTimePicker
-            // 
-            this.ModifydateTimePicker.Enabled = false;
-            this.ModifydateTimePicker.Location = new System.Drawing.Point(120, 169);
-            this.ModifydateTimePicker.MaxDate = new System.DateTime(2021, 4, 20, 0, 0, 0, 0);
-            this.ModifydateTimePicker.MinDate = new System.DateTime(2021, 4, 20, 0, 0, 0, 0);
-            this.ModifydateTimePicker.Name = "ModifydateTimePicker";
-            this.ModifydateTimePicker.Size = new System.Drawing.Size(197, 20);
-            this.ModifydateTimePicker.TabIndex = 43;
-            this.ModifydateTimePicker.Value = new System.DateTime(2021, 4, 20, 0, 0, 0, 0);
             // 
             // Deletebutton
             // 
@@ -207,15 +196,22 @@ namespace PhotoDiary
             this.Backdeletebutton.UseVisualStyleBackColor = true;
             this.Backdeletebutton.Click += new System.EventHandler(this.Backdeletebutton_Click);
             // 
+            // ModifydatedateTimePicker
+            // 
+            this.ModifydatedateTimePicker.Location = new System.Drawing.Point(120, 166);
+            this.ModifydatedateTimePicker.Name = "ModifydatedateTimePicker";
+            this.ModifydatedateTimePicker.Size = new System.Drawing.Size(408, 20);
+            this.ModifydatedateTimePicker.TabIndex = 47;
+            // 
             // DeleteEvent
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(255)))), ((int)(((byte)(128)))), ((int)(((byte)(128)))));
             this.ClientSize = new System.Drawing.Size(964, 450);
+            this.Controls.Add(this.ModifydatedateTimePicker);
             this.Controls.Add(this.Backdeletebutton);
             this.Controls.Add(this.Searchbutton);
-            this.Controls.Add(this.ModifydateTimePicker);
             this.Controls.Add(this.Deletebutton);
             this.Controls.Add(this.pictureeditBox);
             this.Controls.Add(this.UploadimageedittextBox);
@@ -232,6 +228,7 @@ namespace PhotoDiary
             this.Name = "DeleteEvent";
             this.Text = "DeleteEvent";
             this.FormClosing += new System.Windows.Forms.FormClosingEventHandler(this.DeleteEvent_FormClosing);
+            this.Load += new System.EventHandler(this.DeleteEvent_Load);
             ((System.ComponentModel.ISupportInitialize)(this.pictureeditBox)).EndInit();
             this.ResumeLayout(false);
             this.PerformLayout();
@@ -241,7 +238,6 @@ namespace PhotoDiary
         #endregion
 
         private System.Windows.Forms.Button Searchbutton;
-        private System.Windows.Forms.DateTimePicker ModifydateTimePicker;
         private System.Windows.Forms.Button Deletebutton;
         private System.Windows.Forms.PictureBox pictureeditBox;
         private System.Windows.Forms.TextBox UploadimageedittextBox;
@@ -256,5 +252,6 @@ namespace PhotoDiary
         private System.Windows.Forms.Label Storylabel;
         private System.Windows.Forms.Label Eventnamelabel;
         private System.Windows.Forms.Button Backdeletebutton;
+        private System.Windows.Forms.TextBox ModifydatedateTimePicker;
     }
 }

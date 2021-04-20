@@ -22,76 +22,133 @@ namespace PhotoDiary
 
         private void Registerformbutton_Click(object sender, EventArgs e)
         {
-            if (AgreeregistercheckBox.Text == "")
+
+            SqlConnection connection = new SqlConnection(ConfigurationManager.ConnectionStrings["MyDiary"].ConnectionString);
+            connection.Open();
+
+            string sql = "SELECT *FROM Users WHERE userName= '" + UsernameregistertextBox.Text + "' ";
+            SqlCommand command = new SqlCommand(sql, connection);
+            SqlDataReader reader = command.ExecuteReader();
+
+
+            if (reader.Read())
             {
-                MessageBox.Show("agree can not be empty");
+                MessageBox.Show("User Name Already Exist!!!!!!!!!!Give Another User Name.....");
+                RegisterForm registerForm = new RegisterForm();
+
+                this.Hide();
+                registerForm.Show();
+
+
+
+
+
             }
-
-            else if (NameregistertextBox.Text == "")
-            { MessageBox.Show("Name can not be empty"); }
-
-            else if (UsernameregistertextBox.Text == "")
-            { MessageBox.Show("User Name can not be empty"); }
-
-            else if (PasswordregistertextBox.Text == "")
-            { MessageBox.Show("Password can not be empty"); }
-
-            else if (ConfirmpasswordregistertextBox.Text == "")
-            { MessageBox.Show("Confrim Password can not be empty"); }
-
-            else if (EmailregistertextBox.Text == "")
-            { MessageBox.Show("Email can not be empty"); }
-
-            else if (DateofbirthregisterdateTimePicker.Text == "")
-            { MessageBox.Show("Date of Birth can not be empty"); }
-
-            else if (MaleregisterradioButton.Text == "" && FemaleregisterradioButton.Text == "")
-            { MessageBox.Show("Gender can not be empty"); }
-
-            else if (CountryregistercomboBox.Text == "")
-            { MessageBox.Show("Blood Group can not be empty"); }
-
-
-
 
             else
             {
-                //Database
-                SqlConnection connection = new SqlConnection(ConfigurationManager.ConnectionStrings["MyDiary"].ConnectionString);
 
-                connection.Open();
-
-                string gender = "";
-                if (MaleregisterradioButton.Checked)
-                { 
-                    gender = "Male";
-                }
-                else 
+                if (AgreeregistercheckBox.Text == "")
                 {
-                    gender = "Female"; 
+                    MessageBox.Show("agree can not be empty");
                 }
-                string sql = "INSERT INTO USERS(userName,password,name,email,mobileNumber,dateofBirth,gender,country)VALUES('" + UsernameregistertextBox.Text + "','" + PasswordregistertextBox.Text + "','"+NameregistertextBox.Text+"','" + EmailregistertextBox.Text + "','"+MobilenumberregistertextBox.Text+"','"+DateofbirthregisterdateTimePicker.Text+"','" + gender + "','" + CountryregistercomboBox.Text + "')";
-                SqlCommand command = new SqlCommand(sql, connection);
-                int result = command.ExecuteNonQuery();
 
-                if (result > 0)
-                {
-                    MessageBox.Show("User Added");
-                    connection.Close();
-                    LoginFrom login = new LoginFrom();
-                    this.Hide();
-                    login.Show();
-                    connection.Close();
-                }
+                else if (NameregistertextBox.Text == "")
+                { MessageBox.Show("Name can not be empty"); }
+
+                else if (UsernameregistertextBox.Text == "")
+                { MessageBox.Show("User Name can not be empty"); }
+
+                else if (PasswordregistertextBox.Text == "")
+                { MessageBox.Show("Password can not be empty"); }
+
+                else if (ConfirmpasswordregistertextBox.Text == "")
+                { MessageBox.Show("Confrim Password can not be empty"); }
+
+                else if (EmailregistertextBox.Text == "")
+                { MessageBox.Show("Email can not be empty"); }
+
+                else if (DateofbirthregisterdateTimePicker.Text == "")
+                { MessageBox.Show("Date of Birth can not be empty"); }
+
+                else if (MaleregisterradioButton.Text == "" && FemaleregisterradioButton.Text == "")
+                { MessageBox.Show("Gender can not be empty"); }
+
+                else if (CountryregistercomboBox.Text == "")
+                { MessageBox.Show("Blood Group can not be empty"); }
+
+
+
+
                 else
-
                 {
-                    MessageBox.Show("User Not Added");
-                    connection.Close();
+                    //Database
+                    SqlConnection connection1 = new SqlConnection(ConfigurationManager.ConnectionStrings["MyDiary"].ConnectionString);
+
+                    connection1.Open();
+
+                    string gender = "";
+                    if (MaleregisterradioButton.Checked)
+                    {
+                        gender = "Male";
+                    }
+                    else
+                    {
+                        gender = "Female";
+                    }
+                    string sql1 = "INSERT INTO USERS(userName,password,name,email,mobileNumber,dateofBirth,gender,country)VALUES('" + UsernameregistertextBox.Text + "','" + PasswordregistertextBox.Text + "','" + NameregistertextBox.Text + "','" + EmailregistertextBox.Text + "','" + MobilenumberregistertextBox.Text + "','" + DateofbirthregisterdateTimePicker.Text + "','" + gender + "','" + CountryregistercomboBox.Text + "')";
+                    SqlCommand command1 = new SqlCommand(sql, connection1);
+                    int result = command1.ExecuteNonQuery();
+
+                    if (result > 0)
+                    {
+                        MessageBox.Show("User Added");
+                        connection1.Close();
+                        LoginFrom login = new LoginFrom();
+                        this.Hide();
+                        login.Show();
+                        connection1.Close();
+                    }
+                    else
+
+                    {
+                        MessageBox.Show("User Not Added");
+                        connection1.Close();
+                    }
+
                 }
 
             }
+            connection.Close();
+
+
+            /*
+             
+             */
+
         }
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+            
+
+                
+        
 
 
         private void EmailregistertextBox_Validating(object sender, CancelEventArgs e)

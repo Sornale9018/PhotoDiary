@@ -90,6 +90,12 @@
     <Compile Include="RegisterForm.Designer.cs">
       <DependentUpon>RegisterForm.cs</DependentUpon>
     </Compile>
+    <Compile Include="ShowEvent.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="ShowEvent.Designer.cs">
+      <DependentUpon>ShowEvent.cs</DependentUpon>
+    </Compile>
     <Compile Include="Users.cs" />
     <EmbeddedResource Include="CreateEvent.resx">
       <DependentUpon>CreateEvent.cs</DependentUpon>
@@ -121,6 +127,9 @@
     </Compile>
     <EmbeddedResource Include="RegisterForm.resx">
       <DependentUpon>RegisterForm.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="ShowEvent.resx">
+      <DependentUpon>ShowEvent.cs</DependentUpon>
     </EmbeddedResource>
     <None Include="Properties\Settings.settings">
       <Generator>SettingsSingleFileGenerator</Generator>

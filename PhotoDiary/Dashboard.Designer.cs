@@ -114,6 +114,7 @@ namespace PhotoDiary
             this.button4.TabIndex = 6;
             this.button4.Text = "PROFILE";
             this.button4.UseVisualStyleBackColor = true;
+            this.button4.Click += new System.EventHandler(this.button4_Click);
             // 
             // button5
             // 
@@ -128,6 +129,10 @@ namespace PhotoDiary
             // 
             // EventlistdataGridView
             // 
+            this.EventlistdataGridView.AllowUserToAddRows = false;
+            this.EventlistdataGridView.AllowUserToDeleteRows = false;
+            this.EventlistdataGridView.AllowUserToResizeColumns = false;
+            this.EventlistdataGridView.AllowUserToResizeRows = false;
             this.EventlistdataGridView.BackgroundColor = System.Drawing.Color.FromArgb(((int)(((byte)(255)))), ((int)(((byte)(192)))), ((int)(((byte)(192)))));
             this.EventlistdataGridView.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
             this.EventlistdataGridView.GridColor = System.Drawing.Color.FromArgb(((int)(((byte)(255)))), ((int)(((byte)(128)))), ((int)(((byte)(128)))));

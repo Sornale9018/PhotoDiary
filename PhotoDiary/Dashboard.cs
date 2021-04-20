@@ -9,6 +9,7 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
+//using System.IO;
 
 namespace PhotoDiary
 {
@@ -48,6 +49,8 @@ namespace PhotoDiary
                 user.ModifyDate = Convert.ToString(reader["modifyDate"]);
                 user.Importance = reader["importance"].ToString();
                 user.Path = Convert.ToString(reader["filename"]);
+                
+                
                 users.Add(user);
             }
             EventlistdataGridView.DataSource = users;
@@ -97,6 +100,13 @@ namespace PhotoDiary
             DeleteEvent deleteEvent = new DeleteEvent();
             this.Hide();
             deleteEvent.Show();
+        }
+
+        private void button4_Click(object sender, EventArgs e)
+        {
+            ShowEvent showEvent = new ShowEvent();
+            this.Hide();
+            showEvent.Show();
         }
     }
 }

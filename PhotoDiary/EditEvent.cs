@@ -32,44 +32,8 @@ namespace PhotoDiary
 
         private void EditEvent_Load(object sender, EventArgs e)
         {
-            /*SqlConnection connection = new SqlConnection(ConfigurationManager.ConnectionStrings["MyDiary"].ConnectionString);
-            connection.Open();
-            string sql = "SELECT *FROM Diary WHERE userName='" + LoginFrom.UserName + "'";
-            SqlCommand command = new SqlCommand(sql, connection);
-            SqlDataReader reader = command.ExecuteReader();
-            if (reader.Read())
-            {
 
-
-                EventeditnametextBox.Text = Convert.ToString(reader["eventName"]);
-                StoryedittextBox.Text = Convert.ToString(reader["story"]);
-                UploadimageedittextBox.Text = Convert.ToString(reader["filename"]);
-
-
-
-                string Importance = reader["importance"].ToString();
-                if (Importance == "Less")
-                {
-                    LesseditradioButton.Checked = true;
-                }
-                else if (Importance == "Moderate")
-                {
-                    ModerateeditradioButton.Checked = true;
-
-                }
-                else
-                    HigheditradioButton.Checked = true;
-
-                pictureeditBox.Image = new Bitmap(UploadimageedittextBox.Text);
-
-            }
-
-            else
-            {
-                
-                MessageBox.Show("No Event Exist");
-            }
-            connection.Close();*/
+            ModifydateTimePicker.Text = DateTime.Now.ToLongDateString();
         }
 
         private void svaebutton_Click(object sender, EventArgs e)
@@ -111,7 +75,7 @@ namespace PhotoDiary
 
 
                 string sql = "UPDATE Diary SET eventName='" + EventeditnametextBox.Text + "',story='" + StoryedittextBox.Text + "',modifyDate='" + ModifydateTimePicker.Text + "'," +
-                "importance='" + Importance + "',filename='" + CreateEvent.ImagePath + "' Where userName='" + LoginFrom.UserName + "'";
+                "importance='" + Importance + "',filename='" + CreateEvent.ImagePath + "' Where userName='" + LoginFrom.UserName + "' and eventName='"+EventeditnametextBox.Text+"'";
 
 
                 SqlCommand command = new SqlCommand(sql, connection);

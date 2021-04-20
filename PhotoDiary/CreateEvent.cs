@@ -148,7 +148,7 @@ namespace PhotoDiary
 
         private void CreateEvent_Load(object sender, EventArgs e)
         {
-
+            dateTimePicker.Text = DateTime.Now.ToLongDateString();
         }
 
         private void Backcreatebutton_Click(object sender, EventArgs e)
@@ -172,6 +172,11 @@ namespace PhotoDiary
             }
             else
                 Close();
+        }
+
+        private void pictureBox_Click(object sender, EventArgs e)
+        {
+
         }
     }
 }

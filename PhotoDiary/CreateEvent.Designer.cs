@@ -42,8 +42,8 @@ namespace PhotoDiary
             this.UploadimagetextBox = new System.Windows.Forms.TextBox();
             this.svaebutton = new System.Windows.Forms.Button();
             this.pictureBox = new System.Windows.Forms.PictureBox();
-            this.dateTimePicker = new System.Windows.Forms.DateTimePicker();
             this.Backcreatebutton = new System.Windows.Forms.Button();
+            this.dateTimePicker = new System.Windows.Forms.TextBox();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox)).BeginInit();
             this.SuspendLayout();
             // 
@@ -166,17 +166,7 @@ namespace PhotoDiary
             this.pictureBox.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage;
             this.pictureBox.TabIndex = 12;
             this.pictureBox.TabStop = false;
-            // 
-            // dateTimePicker
-            // 
-            this.dateTimePicker.Enabled = false;
-            this.dateTimePicker.Location = new System.Drawing.Point(215, 173);
-            this.dateTimePicker.MaxDate = new System.DateTime(2021, 4, 19, 0, 0, 0, 0);
-            this.dateTimePicker.MinDate = new System.DateTime(2021, 4, 19, 0, 0, 0, 0);
-            this.dateTimePicker.Name = "dateTimePicker";
-            this.dateTimePicker.Size = new System.Drawing.Size(197, 20);
-            this.dateTimePicker.TabIndex = 14;
-            this.dateTimePicker.Value = new System.DateTime(2021, 4, 19, 0, 0, 0, 0);
+            this.pictureBox.Click += new System.EventHandler(this.pictureBox_Click);
             // 
             // Backcreatebutton
             // 
@@ -188,14 +178,22 @@ namespace PhotoDiary
             this.Backcreatebutton.UseVisualStyleBackColor = true;
             this.Backcreatebutton.Click += new System.EventHandler(this.Backcreatebutton_Click);
             // 
+            // dateTimePicker
+            // 
+            this.dateTimePicker.Enabled = false;
+            this.dateTimePicker.Location = new System.Drawing.Point(215, 173);
+            this.dateTimePicker.Name = "dateTimePicker";
+            this.dateTimePicker.Size = new System.Drawing.Size(408, 20);
+            this.dateTimePicker.TabIndex = 16;
+            // 
             // CreateEvent
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(255)))), ((int)(((byte)(128)))), ((int)(((byte)(128)))));
             this.ClientSize = new System.Drawing.Size(991, 450);
-            this.Controls.Add(this.Backcreatebutton);
             this.Controls.Add(this.dateTimePicker);
+            this.Controls.Add(this.Backcreatebutton);
             this.Controls.Add(this.svaebutton);
             this.Controls.Add(this.pictureBox);
             this.Controls.Add(this.UploadimagetextBox);
@@ -234,7 +232,7 @@ namespace PhotoDiary
         private System.Windows.Forms.TextBox UploadimagetextBox;
         private System.Windows.Forms.PictureBox pictureBox;
         private System.Windows.Forms.Button svaebutton;
-        private System.Windows.Forms.DateTimePicker dateTimePicker;
         private System.Windows.Forms.Button Backcreatebutton;
+        private System.Windows.Forms.TextBox dateTimePicker;
     }
 }

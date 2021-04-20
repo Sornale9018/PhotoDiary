@@ -29,7 +29,6 @@ namespace PhotoDiary
         /// </summary>
         private void InitializeComponent()
         {
-            this.ModifydateTimePicker = new System.Windows.Forms.DateTimePicker();
             this.Updatebutton = new System.Windows.Forms.Button();
             this.pictureeditBox = new System.Windows.Forms.PictureBox();
             this.UploadimageedittextBox = new System.Windows.Forms.TextBox();
@@ -45,19 +44,9 @@ namespace PhotoDiary
             this.Eventnamelabel = new System.Windows.Forms.Label();
             this.Searchbutton = new System.Windows.Forms.Button();
             this.Backeditbutton = new System.Windows.Forms.Button();
+            this.ModifydateTimePicker = new System.Windows.Forms.TextBox();
             ((System.ComponentModel.ISupportInitialize)(this.pictureeditBox)).BeginInit();
             this.SuspendLayout();
-            // 
-            // ModifydateTimePicker
-            // 
-            this.ModifydateTimePicker.Enabled = false;
-            this.ModifydateTimePicker.Location = new System.Drawing.Point(122, 177);
-            this.ModifydateTimePicker.MaxDate = new System.DateTime(2021, 4, 20, 0, 0, 0, 0);
-            this.ModifydateTimePicker.MinDate = new System.DateTime(2021, 4, 20, 0, 0, 0, 0);
-            this.ModifydateTimePicker.Name = "ModifydateTimePicker";
-            this.ModifydateTimePicker.Size = new System.Drawing.Size(197, 20);
-            this.ModifydateTimePicker.TabIndex = 28;
-            this.ModifydateTimePicker.Value = new System.DateTime(2021, 4, 20, 0, 0, 0, 0);
             // 
             // Updatebutton
             // 
@@ -202,15 +191,22 @@ namespace PhotoDiary
             this.Backeditbutton.UseVisualStyleBackColor = true;
             this.Backeditbutton.Click += new System.EventHandler(this.Backeditbutton_Click);
             // 
+            // ModifydateTimePicker
+            // 
+            this.ModifydateTimePicker.Location = new System.Drawing.Point(122, 177);
+            this.ModifydateTimePicker.Name = "ModifydateTimePicker";
+            this.ModifydateTimePicker.Size = new System.Drawing.Size(408, 20);
+            this.ModifydateTimePicker.TabIndex = 31;
+            // 
             // EditEvent
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(255)))), ((int)(((byte)(128)))), ((int)(((byte)(128)))));
             this.ClientSize = new System.Drawing.Size(895, 450);
+            this.Controls.Add(this.ModifydateTimePicker);
             this.Controls.Add(this.Backeditbutton);
             this.Controls.Add(this.Searchbutton);
-            this.Controls.Add(this.ModifydateTimePicker);
             this.Controls.Add(this.Updatebutton);
             this.Controls.Add(this.pictureeditBox);
             this.Controls.Add(this.UploadimageedittextBox);
@@ -235,8 +231,6 @@ namespace PhotoDiary
         }
 
         #endregion
-
-        private System.Windows.Forms.DateTimePicker ModifydateTimePicker;
         private System.Windows.Forms.Button Updatebutton;
         private System.Windows.Forms.PictureBox pictureeditBox;
         private System.Windows.Forms.TextBox UploadimageedittextBox;
@@ -252,5 +246,6 @@ namespace PhotoDiary
         private System.Windows.Forms.Label Eventnamelabel;
         private System.Windows.Forms.Button Searchbutton;
         private System.Windows.Forms.Button Backeditbutton;
+        private System.Windows.Forms.TextBox ModifydateTimePicker;
     }
 }

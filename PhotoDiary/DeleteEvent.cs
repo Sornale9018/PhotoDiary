@@ -143,5 +143,10 @@ namespace PhotoDiary
             else
                 Close();
         }
+
+        private void DeleteEvent_Load(object sender, EventArgs e)
+        {
+            ModifydatedateTimePicker.Text = DateTime.Now.ToLongDateString();
+        }
     }
 }

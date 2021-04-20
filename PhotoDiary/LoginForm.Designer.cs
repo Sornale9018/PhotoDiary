@@ -88,7 +88,7 @@ namespace PhotoDiary
             this.Loginbutton.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(255)))), ((int)(((byte)(192)))), ((int)(((byte)(192)))));
             this.Loginbutton.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.Loginbutton.ForeColor = System.Drawing.SystemColors.ActiveCaptionText;
-            this.Loginbutton.Location = new System.Drawing.Point(317, 210);
+            this.Loginbutton.Location = new System.Drawing.Point(291, 247);
             this.Loginbutton.Name = "Loginbutton";
             this.Loginbutton.Size = new System.Drawing.Size(75, 23);
             this.Loginbutton.TabIndex = 5;
@@ -111,9 +111,9 @@ namespace PhotoDiary
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(255)))), ((int)(((byte)(128)))), ((int)(((byte)(128)))));
-            this.ClientSize = new System.Drawing.Size(448, 450);
-            this.Controls.Add(this.label3);
+            this.ClientSize = new System.Drawing.Size(504, 450);
             this.Controls.Add(this.Loginbutton);
+            this.Controls.Add(this.label3);
             this.Controls.Add(this.Registerbutton);
             this.Controls.Add(this.PasswordlogintextBox);
             this.Controls.Add(this.UsernamelogintextBox);
